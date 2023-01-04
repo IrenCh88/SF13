@@ -1,0 +1,33 @@
+summ_price = 0
+while True:
+    try:
+        n_tikket = int(input("введите количество билетов "))
+        if type(n_tikket) == int:
+            break
+    except ValueError:
+        print("введите целое число")
+for i in range(n_tikket):
+    i += 1
+    while True:
+        try:
+            age_for_bil = int(input(f"введите возраст для билета №{i} "))
+            if age_for_bil < 18:
+                print("Для билет free")
+                summ_price += 0
+            elif 25 > age_for_bil >= 18:
+                print(f"Для билета цена 990 p")
+                summ_price += 990
+            else:
+                print(f"Для билета цена 1390 p")
+                summ_price += 1390
+
+            break
+        except ValueError as error:
+            print("Неправильный ввод")
+
+if n_tikket > 3:
+    summ_price = summ_price * 0.9
+    print(f'Сумма к оплате {summ_price} руб.')
+else:
+    print(f'Сумма к оплате {summ_price} руб.')
+
